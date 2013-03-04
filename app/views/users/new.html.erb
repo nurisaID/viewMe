@@ -16,8 +16,8 @@
 	<div class="errors_message">
 	 <% if @user.errors.any? %>
 	  <ul class ="Signup_errors">
-		<% @user.errors.full_message.each do |message_errors| %>
-		<li><%= message_errors %></li>
+		<% for message_error in @user.errors.full_messages %>
+		<li><%= message_error %></li>
 		<% end %>
 	  </ul>
 	 <% end %>
