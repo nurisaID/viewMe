@@ -1,0 +1,24 @@
+<% @page_title = "Signup" %>
+	<div class ="signup_form">
+	 <h2>Sign Up</h2>
+	 <%= form_for(:user, :url => {:controller => 'users', :action => :create}) do |f|%>
+	  <%= f.label :username %>
+	  <%= f.text_field :username %> <br />
+	  <%= f.label :email %>
+	  <%= f.text_field :email %><br />
+	  <%= f.label :password %>
+	  <%= f.text_field :password %><br />
+	  <%= f.label :password_confirmation %>
+	  <%= f.text_field :password_confirmation %><br />
+	  <%= f.submit :Signup %>
+	  <% end %>
+	</div>
+	<div class="errors_message">
+	 <% if @user.errors.any? %>
+	  <ul class ="Signup_errors">
+		<% @user.errors.full_message.each do |message_errors| %>
+		<li><%= message_errors %></li>
+		<% end %>
+	  </ul>
+	 <% end %>
+	</div>
